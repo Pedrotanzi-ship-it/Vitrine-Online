@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Loja Online</title>
+<style>
+    body { font-family: Arial; margin:0; padding:0; background:#f4f4f4; }
+    header { background:#007BFF; color:white; text-align:center; padding:20px; }
+    h1 { margin:0; }
+    .carrinho { position: fixed; top: 20px; right: 20px; background:#ffc107; padding:10px 20px; border-radius:5px; font-weight:bold; }
+    .container { display:flex; flex-wrap:wrap; justify-content:center; padding:20px; }
+    .produto { background:white; border-radius:10px; margin:15px; padding:20px; width:200px; box-shadow:0 2px 5px rgba(0,0,0,0.2); text-align:center; }
+    .produto img { width:100%; border-radius:5px; }
+    .produto h2 { font-size:18px; margin:10px 0; }
+    .produto p { color:#333; font-size:16px; margin:5px 0; }
+    .produto button { background:#28a745; color:white; border:none; padding:10px; width:100%; cursor:pointer; font-size:16px; border-radius:5px; }
+    .produto button:hover { background:#218838; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Minha Loja Online</h1>
+</header>
+
+<div class="carrinho" id="carrinho">Itens: 0 | Total: R$0,00</div>
+
+<div class="container">
+    <div class="produto">
+        <img src="https://via.placeholder.com/200x150" alt="Produto 1">
+        <h2>Produto 1</h2>
+        <p>R$50,00</p>
+        <button onclick="adicionarAoCarrinho('Produto 1', 50)">Comprar</button>
+    </div>
+    <div class="produto">
+        <img src="https://via.placeholder.com/200x150" alt="Produto 2">
+        <h2>Produto 2</h2>
+        <p>R$75,00</p>
+        <button onclick="adicionarAoCarrinho('Produto 2', 75)">Comprar</button>
+    </div>
+    <div class="produto">
+        <img src="https://via.placeholder.com/200x150" alt="Produto 3">
+        <h2>Produto 3</h2>
+        <p>R$120,00</p>
+        <button onclick="adicionarAoCarrinho('Produto 3', 120)">Comprar</button>
+    </div>
+</div>
+
+<script>
+    let itens = 0;
+    let total = 0;
+
+    function adicionarAoCarrinho(nome, preco) {
+        itens++;
+        total += preco;
+        document.getElementById('carrinho').innerText = `Itens: ${itens} | Total: R$${total.toFixed(2)}`;
+        alert(`${nome} adicionado ao carrinho!`);
+    }
+</script>
+
+</body>
+</html>
